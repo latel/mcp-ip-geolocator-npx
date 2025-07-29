@@ -1,6 +1,6 @@
 {
   "name": "mcp-ip-geolocator-npx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server providing IP geolocation via IP-API.com. Free, no API key required.",
   "main": "build/index.js",
   "type": "module",
