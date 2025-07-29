@@ -1,17 +1,25 @@
 {
-  "name": "mcp-ip-geolocator",
+  "name": "mcp-ip-geolocator-npx",
   "version": "1.0.0",
   "description": "MCP server providing IP geolocation via IP-API.com. Free, no API key required.",
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "mcp-ip-geolocator": "./build/index.js"
+  },
+  "preferGlobal": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
+    "postbuild": "chmod +x build/index.js",
     "start": "node build/index.js",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@agentico/mcp-server": "^1.0.0",
-    "@modelcontextprotocol/sdk": "^0.9.0",
+    "@modelcontextprotocol/sdk": "^1.17.0",
     "axios": "^1.6.5",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.22.3"
@@ -25,8 +33,19 @@
     "model-context-protocol",
     "geolocation",
     "ip",
-    "claude"
+    "claude",
+    "anthropic",
+    "npx",
+    "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latel/mcp-ip-geolocator-npx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/latel/mcp-ip-geolocator-npx/issues"
+  },
+  "homepage": "https://github.com/latel/mcp-ip-geolocator-npx#readme",
   "author": "Ted Likes Kix",
   "license": "MIT"
 }

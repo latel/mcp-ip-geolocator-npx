@@ -12,33 +12,69 @@ A Model Context Protocol (MCP) server that provides IP geolocation services via 
 
 ## Quick Start
 
-1. Install globally:
+### Run with npx (No Installation Required)
+
+The easiest way to use this MCP server:
+
 ```bash
-npm install -g mcp-ip-geolocator
+npx mcp-ip-geolocator-npx
 ```
 
-2. Run the server:
+This will download and run the latest version without installing anything globally.
+
+### Install Globally
+
+If you prefer to install globally:
+
 ```bash
+npm install -g mcp-ip-geolocator-npx
 mcp-ip-geolocator
+```
+
+### Claude Desktop Configuration
+
+Add to your Claude Desktop MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "ip-geolocation": {
+      "command": "npx",
+      "args": ["mcp-ip-geolocator-npx"]
+    }
+  }
+}
+```
+
+Or if installed globally:
+
+```json
+{
+  "mcpServers": {
+    "ip-geolocation": {
+      "command": "mcp-ip-geolocator"
+    }
+  }
+}
 ```
 
 ## Local Development
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/tedlikeskix/mcp-ip-geolocator.git
-cd mcp-ip-geolocator
+git clone https://github.com/latel/mcp-ip-geolocator-npx.git
+cd mcp-ip-geolocator-npx
 ```
 
 2. Install dependencies:
 ```bash
-yarn install
+npm install
 ```
 
 3. Build and run:
 ```bash
-yarn build
-yarn start
+npm run build
+npm start
 ```
 
 ## Usage with Claude
